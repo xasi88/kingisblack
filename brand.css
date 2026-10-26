@@ -1,0 +1,6 @@
+/* Переменные брендбука KingIsBlack (стиль «Видоискатель»). Один файл для страницы и шаблонов.
+   Цвет или шрифт меняется только здесь и в CLAUDE.md вместе. */
+:root {
+  --black: #0A0A0A; --graphite: #1C1C1C; --white: #F5F5F5; --red: #FF2E2E; --grey: #8C8C8C; --line: #2B2B2B;
+  --head: "Oswald", "Arial Narrow", sans-serif; --text: "Golos Text", system-ui, sans-serif;
+}

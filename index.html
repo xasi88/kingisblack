@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>KingIsBlack: брендбук</title>
+<meta name="description" content="Брендбук монтажёра Атама: знак, цвета, шрифты и готовые файлы для CapCut.">
+<link rel="icon" href="знак/знак-белый.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Golos+Text:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="brand.css">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--black); color: var(--white); font: 17px/1.55 var(--text); -webkit-text-size-adjust: 100%; }
+  img { display: block; max-width: 100%; height: auto; }
+  a { color: inherit; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+  h1, h2, h3 { font-family: var(--head); font-weight: 700; text-transform: uppercase; line-height: 1.02; }
+  h2 { font-size: clamp(38px, 8vw, 64px); margin-bottom: 20px; }
+  h3 { font-size: 26px; margin: 36px 0 12px; }
+  p + p { margin-top: 10px; }
+  .muted { color: var(--grey); }
+
+  /* Шапка */
+  .top { padding: 28px 0 44px; border-bottom: 1px solid var(--line); }
+  .top .lockup { height: 44px; width: auto; }
+  .top h1 { font-size: clamp(56px, 14vw, 120px); margin: 40px 0 14px; }
+  .top .lead { font-size: 19px; max-width: 560px; }
+  .btn { display: inline-flex; align-items: center; gap: 12px; margin-top: 26px; padding: 16px 22px; min-height: 56px;
+         background: var(--white); color: var(--black); font: 600 17px/1.2 var(--text); text-decoration: none; border: 0; cursor: pointer; }
+  .btn::before { content: ""; width: 12px; height: 12px; border-radius: 50%; background: var(--red); flex: none; }
+  .btn:active { transform: translateY(1px); }
+  .nav { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 30px; font-size: 16px; }
+  .nav a { color: var(--grey); text-decoration: none; padding: 10px 0; display: inline-block; }
+  .nav a:hover { color: var(--white); }
+
+  section { padding: 56px 0; border-bottom: 1px solid var(--line); }
+  ul.rules { list-style: none; display: grid; gap: 10px; max-width: 720px; }
+  ul.rules li { padding-left: 22px; position: relative; }
+  ul.rules li::before { content: ""; position: absolute; left: 0; top: .62em; width: 8px; height: 8px; border-radius: 50%; background: var(--red); }
+  ol.steps { padding-left: 22px; display: grid; gap: 8px; max-width: 720px; }
+
+  /* Знак */
+  .marks { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; max-width: 640px; }
+  .tile { display: grid; place-items: center; padding: 36px 16px; aspect-ratio: 1; }
+  .tile img { width: 62%; }
+  .tile.light { background: var(--white); }
+  .tile.dark { background: var(--graphite); }
+  .wide { background: var(--graphite); padding: 36px 24px; margin-bottom: 28px; max-width: 640px; }
+  .wide img { width: 100%; max-width: 640px; margin: 0 auto; }
+  .files { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+  .files a { font-size: 15px; padding: 10px 14px; border: 1px solid var(--line); text-decoration: none; min-height: 44px; display: inline-flex; align-items: center; }
+  .files a:hover { border-color: var(--white); }
+
+  /* Цвета */
+  .colors { display: grid; gap: 10px; max-width: 720px; margin-bottom: 24px; }
+  .color { display: grid; grid-template-columns: 64px 1fr auto; gap: 14px; align-items: center; }
+  .color .sw { height: 56px; border: 1px solid var(--line); }
+  .color b { display: block; font-weight: 600; }
+  .color small { color: var(--grey); font-size: 14px; }
+  .copy { font: 600 15px/1 var(--text); color: var(--white); background: none; border: 1px solid var(--line); padding: 12px 14px; min-height: 44px; min-width: 112px; cursor: pointer; }
+  .copy:hover { border-color: var(--white); }
+  .copy.ok { border-color: var(--red); }
+
+  /* Шрифты */
+  .font { background: var(--graphite); padding: 26px 22px; margin-bottom: 12px; }
+  .font .big { font-family: var(--head); font-weight: 700; text-transform: uppercase; font-size: clamp(44px, 10vw, 84px); line-height: 1; }
+  .font .mid { font-size: 22px; line-height: 1.4; }
+  .font p.muted { margin-top: 14px; font-size: 15px; }
+
+  /* Картинки шаблонов */
+  .shots { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start; margin: 8px 0 6px; }
+  .shots figure { flex: 0 1 auto; }
+  .shots .v { width: calc(50% - 8px); max-width: 260px; }
+  .shots .h { width: 100%; max-width: 520px; }
+  .shots .sq { width: calc(25% - 12px); max-width: 150px; }
+  .shots .sq img { border-radius: 50%; }
+  .shots .p45 { width: calc(50% - 8px); max-width: 300px; }
+  .shots img { border: 1px solid var(--line); }
+  figcaption { font-size: 14px; color: var(--grey); margin-top: 6px; }
+
+  .bio { background: var(--graphite); padding: 18px 20px; margin: 10px 0; display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: start; max-width: 720px; }
+  .bio pre { font: 17px/1.5 var(--text); white-space: pre-wrap; }
+
+  footer { padding: 40px 0 56px; color: var(--grey); font-size: 15px; }
+  footer img { height: 32px; width: auto; margin-bottom: 14px; }
+
+  @media (max-width: 520px) {
+    .shots .sq { width: calc(50% - 8px); }
+    .color { grid-template-columns: 48px 1fr; }
+    .color .copy { grid-column: 1 / -1; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <img class="lockup" src="знак/знак-и-надпись-белые.svg" alt="KING IS BLACK">
+    <h1>Брендбук</h1>
+    <p class="lead">Знак, цвета, шрифты и готовые файлы для CapCut. Один стиль для роликов, Instagram и визитки.</p>
+    <a class="btn" href="KingIsBlack-brendbuk.zip" download>Скачать все файлы (ZIP, 1,2 МБ)</a>
+    <nav class="nav">
+      <a href="#znak">Знак</a><a href="#cveta">Цвета</a><a href="#shrifty">Шрифты</a><a href="#roliki">В роликах</a>
+      <a href="#instagram">Instagram</a><a href="#vizitka">Визитка и прайс</a><a href="#ton">Тон текстов</a><a href="#nelzya">Чего не делаем</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section id="znak">
+  <div class="wrap">
+    <h2>Знак</h2>
+    <p>Рамка кадра, буква K и красная точка записи. Знак сразу говорит: этот человек работает с видео.</p>
+    <div class="marks" style="margin-top:24px">
+      <div class="tile dark"><img src="знак/знак-белый.svg" alt="Белый знак на тёмном фоне"></div>
+      <div class="tile light"><img src="знак/знак-чёрный.svg" alt="Чёрный знак на светлом фоне"></div>
+    </div>
+    <div class="wide"><img src="знак/знак-и-надпись-белые.svg" alt="Знак и надпись KING IS BLACK"></div>
+    <ul class="rules">
+      <li>На тёмном фоне белый знак, на светлом чёрный. Точка всегда красная.</li>
+      <li>Вокруг знака пустое место не меньше четверти его ширины.</li>
+      <li>В кадре шириной 1080 px знак не меньше 64 px.</li>
+      <li>Знак и надпись вместе: для шапок, заставки, визитки. Один знак: для водяного знака и мелких мест.</li>
+    </ul>
+    <div class="files">
+      <a href="знак/знак-белый.png" download>Знак белый, PNG</a>
+      <a href="знак/знак-чёрный.png" download>Знак чёрный, PNG</a>
+      <a href="знак/знак-и-надпись-белые.png" download>Знак и надпись белые, PNG</a>
+      <a href="знак/знак-и-надпись-чёрные.png" download>Знак и надпись чёрные, PNG</a>
+      <a href="знак/надпись-белая.png" download>Надпись белая, PNG</a>
+      <a href="знак/надпись-чёрная.png" download>Надпись чёрная, PNG</a>
+      <a href="знак/знак-на-чёрном.png" download>Знак на чёрном квадрате, PNG</a>
+    </div>
+  </div>
+</section>
+
+<section id="cveta">
+  <div class="wrap">
+    <h2>Цвета</h2>
+    <div class="colors">
+      <div class="color"><span class="sw" style="background:#0A0A0A"></span><span><b>Чёрный</b><small>фон</small></span><button class="copy" data-copy="#0A0A0A">#0A0A0A</button></div>
+      <div class="color"><span class="sw" style="background:#1C1C1C"></span><span><b>Графит</b><small>плашки, подложки</small></span><button class="copy" data-copy="#1C1C1C">#1C1C1C</button></div>
+      <div class="color"><span class="sw" style="background:#F5F5F5"></span><span><b>Белый</b><small>текст, знак, плашка титра</small></span><button class="copy" data-copy="#F5F5F5">#F5F5F5</button></div>
+      <div class="color"><span class="sw" style="background:#FF2E2E"></span><span><b>Красный</b><small>только точка записи</small></span><button class="copy" data-copy="#FF2E2E">#FF2E2E</button></div>
+      <div class="color"><span class="sw" style="background:#8C8C8C"></span><span><b>Серый</b><small>подписи, второстепенный текст</small></span><button class="copy" data-copy="#8C8C8C">#8C8C8C</button></div>
+    </div>
+    <ul class="rules">
+      <li>Основа стиля: чёрный и белый, как на аватаре.</li>
+      <li>Красный только круглой точкой: точка записи, точка в титре, точка в знаке. Красных букв, плашек и фонов нет.</li>
+      <li>Углы прямые: у плашек, рамок и кнопок скругления нет.</li>
+    </ul>
+    <p class="muted" style="margin-top:14px">Нажмите на код цвета, чтобы скопировать его. В CapCut код вставляется в поле цвета текста или фона.</p>
+  </div>
+</section>
+
+<section id="shrifty">
+  <div class="wrap">
+    <h2>Шрифты</h2>
+    <div class="font">
+      <div class="big">До и после монтажа</div>
+      <p class="muted">Oswald. Заголовки, обложки, имена в титрах. Всегда заглавными буквами. Bold для заголовков, Medium для мелких надписей вроде «REC».</p>
+    </div>
+    <div class="font">
+      <div class="mid">Пришлите видео в директ, я соберу из него ролик.</div>
+      <p class="muted">Golos Text. Подписи, субтитры, текст постов. Regular для текста, SemiBold для субтитров.</p>
+    </div>
+    <h3>Как поставить</h3>
+    <ol class="steps">
+      <li>Скачать архив. Шрифты лежат в папке «шрифты».</li>
+      <li>На компьютере: открыть файл .ttf и нажать «Установить». CapCut покажет шрифт в списке после перезапуска.</li>
+      <li>На телефоне: в CapCut открыть текст, раздел шрифтов, и добавить файл .ttf через загрузку своего шрифта.</li>
+    </ol>
+    <p class="muted" style="margin-top:12px">Оба шрифта бесплатные, лицензия OFL: их можно ставить в ролики клиентам.</p>
+  </div>
+</section>
+
+<section id="roliki">
+  <div class="wrap">
+    <h2>В роликах</h2>
+
+    <h3>Титр</h3>
+    <div class="shots">
+      <figure class="h"><img src="шаблоны/титр-16x9-пример.png" alt="Титр в горизонтальном ролике" loading="lazy"><figcaption>Горизонтальный ролик</figcaption></figure>
+      <figure class="v"><img src="шаблоны/титр-9x16-пример.png" alt="Титр в вертикальном ролике" loading="lazy"><figcaption>Вертикальный ролик</figcaption></figure>
+    </div>
+    <ul class="rules">
+      <li>Белая плашка, слева красная точка. Имя: Oswald Bold заглавными. Ниже подпись: Golos Text, серым.</li>
+      <li>Не больше двух строк. Плашка в нижней левой части кадра.</li>
+      <li>В вертикальном ролике плашка на высоте двух третей кадра: ниже её закроет подпись Instagram.</li>
+    </ul>
+    <div class="files"><a href="шаблоны/титр-16x9.png" download>Плашка 16:9, PNG</a><a href="шаблоны/титр-9x16.png" download>Плашка 9:16, PNG</a></div>
+
+    <h3>Водяной знак</h3>
+    <ul class="rules">
+      <li>Белый знак (знак-белый.png) в правом верхнем углу.</li>
+      <li>Ширина около 9% кадра: 96 px в кадре 1080 px. Прозрачность 70%.</li>
+      <li>На светлом кадре чёрный знак.</li>
+    </ul>
+
+    <h3>Субтитры</h3>
+    <ul class="rules">
+      <li>Golos Text SemiBold, белые, тонкая чёрная обводка.</li>
+      <li>По центру, чуть ниже середины кадра: снизу их закрывают подпись и кнопки Instagram.</li>
+    </ul>
+
+    <h3>Заставка и концовка</h3>
+    <div class="shots">
+      <figure class="v"><img src="шаблоны/заставка-9x16.png" alt="Заставка 9:16" loading="lazy"><figcaption>Заставка 9:16</figcaption></figure>
+      <figure class="v"><img src="шаблоны/концовка-9x16.png" alt="Концовка 9:16" loading="lazy"><figcaption>Концовка 9:16</figcaption></figure>
+    </div>
+    <ul class="rules">
+      <li>Заставка: 1 секунда в начале своих роликов.</li>
+      <li>Концовка: 2 секунды в конце. В ролик клиента только с его согласия.</li>
+    </ul>
+    <div class="files">
+      <a href="шаблоны/заставка-9x16.png" download>Заставка 9:16</a><a href="шаблоны/заставка-16x9.png" download>Заставка 16:9</a>
+      <a href="шаблоны/концовка-9x16.png" download>Концовка 9:16</a><a href="шаблоны/концовка-16x9.png" download>Концовка 16:9</a>
+    </div>
+  </div>
+</section>
+
+<section id="instagram">
+  <div class="wrap">
+    <h2>Instagram</h2>
+
+    <h3>Обложка рилса</h3>
+    <div class="shots">
+      <figure class="v"><img src="шаблоны/обложка-рилса-пример.png" alt="Пример обложки рилса" loading="lazy"><figcaption>Пример</figcaption></figure>
+      <figure class="v"><img src="шаблоны/обложка-рилса-разметка.png" alt="Разметка обложки рилса" loading="lazy"><figcaption>Разметка</figcaption></figure>
+    </div>
+    <ol class="steps">
+      <li>Поставить кадр из ролика.</li>
+      <li>Сверху положить слой «обложка-рилса-слой.png»: в нём затемнение, REC, знак и ник.</li>
+      <li>Написать заголовок: Oswald Bold, заглавными, 2-3 строки, в зоне заголовка.</li>
+    </ol>
+    <p class="muted" style="margin-top:12px">Сетка профиля показывает только середину обложки. Всё важное держать между линиями разметки.</p>
+    <div class="files"><a href="шаблоны/обложка-рилса-слой.png" download>Слой обложки, PNG</a><a href="шаблоны/обложка-рилса-разметка.png" download>Разметка, PNG</a></div>
+
+    <h3>Актуальное</h3>
+    <div class="shots">
+      <figure class="sq"><img src="шаблоны/актуальное-работы.png" alt="Обложка: Работы" loading="lazy"><figcaption>Работы</figcaption></figure>
+      <figure class="sq"><img src="шаблоны/актуальное-до-и-после.png" alt="Обложка: До и после" loading="lazy"><figcaption>До и после</figcaption></figure>
+      <figure class="sq"><img src="шаблоны/актуальное-отзывы.png" alt="Обложка: Отзывы" loading="lazy"><figcaption>Отзывы</figcaption></figure>
+      <figure class="sq"><img src="шаблоны/актуальное-цены.png" alt="Обложка: Цены" loading="lazy"><figcaption>Цены</figcaption></figure>
+    </div>
+    <p class="muted">В Instagram: нажать на «Актуальное», «Редактировать», «Изменить обложку».</p>
+
+    <h3>Аватар</h3>
+    <p>Чёрно-белое фото лица, как сейчас: оно уже в стиле. Без фото: «знак-на-чёрном.png».</p>
+
+    <h3>Шапка профиля</h3>
+    <p class="muted">Имя в профиле. Слово «монтаж» в имени помогает найти профиль поиском.</p>
+    <div class="bio"><pre>Атам · монтаж роликов</pre><button class="copy" data-copy="Атам · монтаж роликов">Копировать</button></div>
+    <p class="muted" style="margin-top:16px">Описание профиля</p>
+    <div class="bio"><pre>Монтаж роликов на заказ
+Работы в «Актуальном»
+Пишите в директ</pre><button class="copy" data-copy="Монтаж роликов на заказ&#10;Работы в «Актуальном»&#10;Пишите в директ">Копировать</button></div>
+  </div>
+</section>
+
+<section id="vizitka">
+  <div class="wrap">
+    <h2>Визитка и прайс</h2>
+    <div class="shots">
+      <figure class="p45"><img src="шаблоны/визитка.png" alt="Визитка" loading="lazy"><figcaption>Визитка, пост 4:5</figcaption></figure>
+      <figure class="v"><img src="шаблоны/прайс-фон.png" alt="Фон для прайса" loading="lazy"><figcaption>Фон прайса, сторис 9:16</figcaption></figure>
+    </div>
+    <ul class="rules">
+      <li>Визитку закрепить первым постом и отправлять новым клиентам.</li>
+      <li>Прайс: услуги и цены вписать в CapCut поверх фона. Услуга: Oswald Bold, цена: Golos Text. Одна услуга на строку.</li>
+    </ul>
+    <div class="files"><a href="шаблоны/визитка.png" download>Визитка, PNG</a><a href="шаблоны/прайс-фон.png" download>Фон прайса, PNG</a></div>
+  </div>
+</section>
+
+<section id="ton">
+  <div class="wrap">
+    <h2>Тон текстов</h2>
+    <ul class="rules">
+      <li>Коротко и по делу. Одна мысль в предложении.</li>
+      <li>С клиентами на «вы».</li>
+      <li>Заголовок обложки: что увидит зритель, 2-5 слов.</li>
+      <li>Цифры и сроки только настоящие.</li>
+      <li>Без пустых слов: «качественно и в срок», «уникальный», «индивидуальный подход», «команда профессионалов».</li>
+    </ul>
+  </div>
+</section>
+
+<section id="nelzya">
+  <div class="wrap">
+    <h2>Чего не делаем</h2>
+    <ul class="rules">
+      <li>Не менять цвета знака, не растягивать и не поворачивать его.</li>
+      <li>Не добавлять знаку тень, свечение и обводку.</li>
+      <li>Не ставить знак на пёстрый кадр без тёмной подложки.</li>
+      <li>Красный только точкой: без красных букв, плашек и фонов.</li>
+      <li>Других шрифтов не брать. Курсив не ставить.</li>
+      <li>Без градиента в буквах, неона и «стекла».</li>
+      <li>Без скруглённых углов у плашек и кнопок.</li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="знак/знак-и-надпись-белые.svg" alt="KING IS BLACK">
+    <p>Атам, монтаж роликов. <a href="https://www.instagram.com/kingisblack/">@kingisblack</a></p>
+  </div>
+</footer>
+
+<script>
+  // Кнопки копирования: код цвета и тексты шапки профиля
+  document.querySelectorAll(".copy").forEach(btn => {
+    const label = btn.textContent;
+    btn.addEventListener("click", async () => {
+      const text = btn.dataset.copy;
+      try { await navigator.clipboard.writeText(text); }
+      catch {
+        const t = document.createElement("textarea");
+        t.value = text; document.body.appendChild(t); t.select();
+        document.execCommand("copy"); t.remove();
+      }
+      btn.textContent = "Скопировано"; btn.classList.add("ok");
+      setTimeout(() => { btn.textContent = label; btn.classList.remove("ok"); }, 1500);
+    });
+  });
+</script>
+</body>
+</html>
